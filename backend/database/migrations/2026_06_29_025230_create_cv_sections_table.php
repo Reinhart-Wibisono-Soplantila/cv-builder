@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('cv_sections', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('cv_id')->constrained('cvs')->onDelete('cascade');
+            $table->string('title');
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }
