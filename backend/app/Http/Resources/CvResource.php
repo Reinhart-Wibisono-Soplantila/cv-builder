@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\CvSectionResource;
 
 class CvResource extends JsonResource
 {
@@ -19,11 +20,13 @@ class CvResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
-            'address' => $this->address,
+            'country_id' => $this->country_id,
+            'state_id' => $this->state_id,
+            'city_id' => $this->city_id,
             'linkedin' => $this->linkedin,
             'github' => $this->github,
             'summary' => $this->summary,
-            'sections' => CvSectionsResources::collection($this->whenLoaded('sections'))
+            'sections' => CvSectionResource::collection($this->whenLoaded('sections'))
         ];
     }
 }

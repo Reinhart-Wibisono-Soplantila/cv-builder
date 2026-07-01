@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-
+use App\Http\Resources\CvSectionItemResource;
 class CvSectionResource extends JsonResource
 {
     /**
@@ -18,7 +18,7 @@ class CvSectionResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'order' => $this->order,
-            'item' => CvSectionItemResource::collection($this->whenLoaded('items'))
+            'items' => CvSectionItemResource::collection($this->whenLoaded('items'))
         ];
     }
 }

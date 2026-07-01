@@ -15,6 +15,6 @@ class CvSection extends Model
     }
 
     public function items(){
-        return $this->hasMany(CvSectionItem::class)->orderBy('order');
+        return $this->hasMany(CvSectionItem::class, 'section_id')->orderBy('order');
     }
 }

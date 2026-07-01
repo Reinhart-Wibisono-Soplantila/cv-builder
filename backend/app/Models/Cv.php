@@ -8,7 +8,8 @@ class Cv extends Model
 {
     protected $fillable = [
         'name', 'email', 'phone',
-        'address', 'linkedin', 'github', 'summary'
+        'linkedin', 'github', 'summary',
+        'country_id', 'state_id', 'city_id'
     ];
 
     public function sections()

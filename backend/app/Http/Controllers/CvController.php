@@ -16,7 +16,7 @@ class CvController extends Controller
      */
     public function index()
     {
-        $cvs = Cv::with('sections.tems')->get();
+        $cvs = Cv::with('sections.items')->get();
         return CvResource::collection($cvs);
     }
 
